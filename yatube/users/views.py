@@ -20,4 +20,3 @@ def user_contact(request):
         return render(request, 'contact.html', {'form': form})
     form = ContactForm()
     return render(request, 'contact.html', {'form': form})
-
