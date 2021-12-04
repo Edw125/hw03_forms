@@ -129,5 +129,3 @@ def post_edit(request, post_id):
         'post_id': post_id,
     }
     return render(request, 'posts/update_post.html', context)
-
-
