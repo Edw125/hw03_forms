@@ -14,11 +14,11 @@ class Group(models.Model):
                             max_length=200)
     description = models.TextField('Описание')
 
+    class Meta:
+        ordering = ('title',)
+
     def __str__(self):
         return self.title
-
-    class Meta:
-        ordering = ['title']
 
 
 class Post(models.Model):
@@ -39,8 +39,8 @@ class Post(models.Model):
         verbose_name='Группа',
     )
 
-    def __str__(self):
-        return self.text
-
     class Meta:
-        ordering = ['-pub_date']
+        ordering = ('-pub_date',)
+
+    def __str__(self):
+        return self.text[:30]
